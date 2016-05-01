@@ -26,11 +26,14 @@ public class Customer implements Searchable {
     
     }
     
+<<<<<<< HEAD
     public Customer(String email){
         
         this.email=email;
     }
     
+=======
+>>>>>>> Project-patch-1
     public String getCustName(){
      
         return this.name;

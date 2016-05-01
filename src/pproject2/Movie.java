@@ -5,12 +5,18 @@
  */
 package pproject2;
 
+<<<<<<< HEAD
 import static com.sun.org.apache.xalan.internal.xsltc.compiler.util.Type.String;
+=======
+>>>>>>> Project-patch-1
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map.Entry;
 import static java.util.Spliterators.iterator;
+<<<<<<< HEAD
 import pproject2.Actor.Gender;
+=======
+>>>>>>> Project-patch-1
 import pproject2.DVD.Position;
 
 /**
@@ -26,11 +32,15 @@ public class Movie implements Searchable {
     private String name;
     private Language language;
     private DVD dvd;
+<<<<<<< HEAD
     private Actor actor;
     private Keyword keywd;
 
    
     
+=======
+    private Keyword keywd;
+>>>>>>> Project-patch-1
     
    
 
@@ -53,18 +63,27 @@ public class Movie implements Searchable {
     }
     public enum Type{
      
+<<<<<<< HEAD
         G,PG, PG_13,R
+=======
+        G,PG, PG13,R
+>>>>>>> Project-patch-1
     }
     
     private HashMap<String,Actor> actors = new HashMap<String,Actor>();// list of actors in Movie
     private HashMap<String,DVD> dvds= new HashMap<String,DVD>();// list of dvd for each Movie
     private HashMap<String,Keyword> keywds= new HashMap<String,Keyword>();// list of keyword for a Movie
     
+<<<<<<< HEAD
     public Movie(String id, Type rate, String gen, int yr,String name,Language lang,DVD dvd,Actor act,Keyword ky){
+=======
+    public Movie(String id, Type rate, String gen, int yr,String name, DVD dvd,Keyword ky,Language lang){
+>>>>>>> Project-patch-1
         this.ID=id; 
         this.rating=rate;
         this.genre= gen;
         this.year=yr;
+<<<<<<< HEAD
         this.name=name;
         this.language=lang;
         this.dvd= dvd;
@@ -77,6 +96,12 @@ public class Movie implements Searchable {
     public Movie(String id){
         
         this.ID=id;
+=======
+        this.dvd= dvd;
+        this.keywd=ky;
+        this.language=lang;
+       
+>>>>>>> Project-patch-1
     }
     public String getMovieID(){
      
@@ -105,7 +130,11 @@ public class Movie implements Searchable {
         
         for(Entry<String,DVD> entry:dvds.entrySet()){
             
+<<<<<<< HEAD
             if(entry.getKey().equalsIgnoreCase(SN)){
+=======
+            if(entry.getValue().equals(SN)){
+>>>>>>> Project-patch-1
                 
                 dvds.remove(SN);
             }
@@ -113,6 +142,7 @@ public class Movie implements Searchable {
         }
     }
     
+<<<<<<< HEAD
     public DVD findDVD(String SN, boolean lst, Position pos){
         
         DVD d= new DVD(SN, lst,pos);
@@ -165,6 +195,15 @@ public class Movie implements Searchable {
     }
     
     
+=======
+    public DVD findDVD(String SN, boolean lst, Posti
+            
+            
+            tion pos){
+        
+        DVD d= new DVD()
+    }
+>>>>>>> Project-patch-1
 
 }
 

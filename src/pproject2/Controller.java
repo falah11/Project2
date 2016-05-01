@@ -5,6 +5,7 @@
  */
 package pproject2;
 
+<<<<<<< HEAD
 import java.util.Calendar;
 import java.util.HashMap;
 import java.util.Map.Entry;
@@ -12,6 +13,9 @@ import pproject2.Movie.Language;
 import pproject2.Movie.Type;
 import pproject2.Rental.ReturnType;
 import pproject2.Rental.Status;
+=======
+import java.util.HashMap;
+>>>>>>> Project-patch-1
 
 /**
  *
@@ -40,6 +44,7 @@ public class Controller {
         return singleton;
         }
     
+<<<<<<< HEAD
     // be able to keep track of Movies and Customers and rental and request as well
     
     //Movie(String id, Type rate, String gen, int yr,String name,Language lang,DVD dvd,Actor act,Keyword ky)
@@ -128,3 +133,11 @@ public class Controller {
 
 
     
+=======
+    // be able to keep track of Movies and Customers as well
+    
+    
+    
+    
+}
+>>>>>>> Project-patch-1

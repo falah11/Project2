@@ -10,16 +10,24 @@ package pproject2;
  * @author Mohamed
  */
 public class Actor {
+<<<<<<< HEAD
     private String acttorID;
     private String name;
     private Gender gender;
     
     
+=======
+    
+    private String name;
+    private Gender gender;
+    
+>>>>>>> Project-patch-1
     public enum Gender{
      
         M, F
     }
     
+<<<<<<< HEAD
     public Actor(String actID , String name, Gender gend){
         
         this.acttorID=actID;       
@@ -32,6 +40,16 @@ public class Actor {
         
         return this.acttorID;
     }
+=======
+    public Actor( String name, Gender gend){
+     
+        this.name= name;
+        this.gender= gend;
+    }
+    
+    // getter
+    
+>>>>>>> Project-patch-1
     public String getActorName(){
      
         return this.name;

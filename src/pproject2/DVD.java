@@ -48,10 +48,14 @@ public class DVD {
       
          this.lost=lst;
      }
+<<<<<<< HEAD
      public Position getPos(){
          
          return this.position;
      }
+=======
+     
+>>>>>>> Project-patch-1
      public String getDVDInfo(){
       
          return " DVD serialNO :"+ this.serialNO+ " is Found :"+ this.lost+" its Status or Position :"+ this.position;

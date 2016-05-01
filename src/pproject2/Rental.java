@@ -19,6 +19,7 @@ public class Rental implements Searchable {
     private Status status;
     private DVD dvd;
     private Customer customer;
+<<<<<<< HEAD
     private String rating;//
     private String review;
     private ReturnType retrn;
@@ -28,6 +29,12 @@ public class Rental implements Searchable {
 
     
 
+=======
+    private Review rev;//
+    private ReturnType retrn;
+    //private int Customerrate;
+
+>>>>>>> Project-patch-1
     @Override
     public boolean contains(String k) {
         return( dvd.getSerialNO().equalsIgnoreCase(k)); //To change body of generated methods, choose Tools | Templates.
@@ -47,7 +54,11 @@ public class Rental implements Searchable {
     
 }
     
+<<<<<<< HEAD
     public Rental(Calendar rtDate,Calendar rtrnDate, Status st,DVD dvd,Customer cust,ReturnType ret,String movID){
+=======
+    public Rental(Calendar rtDate,Calendar rtrnDate, Status st,DVD dvd,Customer cust,ReturnType ret, Review rev ){
+>>>>>>> Project-patch-1
      
         this.rentDate= rtDate;
         this.returnDate= rtrnDate;
@@ -55,9 +66,13 @@ public class Rental implements Searchable {
         this.dvd=dvd;
         this.customer=cust;
         this.retrn=ret;
+<<<<<<< HEAD
         this.movieID=movID;
         
         
+=======
+        this.rev=rev;
+>>>>>>> Project-patch-1
     }
     
     public String getRentDate()

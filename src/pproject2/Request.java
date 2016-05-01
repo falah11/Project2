@@ -18,7 +18,10 @@ public class Request implements Searchable  {
     private Calendar responseDate;
     private Reqstatus status;
     private ReqType reqtype;
+<<<<<<< HEAD
     private String movID;
+=======
+>>>>>>> Project-patch-1
     private Movie movie;
     private Customer customer;
 
@@ -42,17 +45,26 @@ public class Request implements Searchable  {
     
         BY_MAIL, GOTO_SHOP
     }
+<<<<<<< HEAD
      public Request (Calendar reqDate,Calendar respDate, Reqstatus st,ReqType req,String mov,Customer cust){
+=======
+     public Request (Calendar reqDate,Calendar respDate, Reqstatus st,ReqType req,Movie mov,Customer cust){
+>>>>>>> Project-patch-1
       
          this.requestDate=reqDate;
          this.responseDate=respDate;
          this.status=st;
          this.reqtype=req;
+<<<<<<< HEAD
          this.movID=mov;
+=======
+         this.movie=mov;
+>>>>>>> Project-patch-1
          this.customer=cust;
      
      }
      
+<<<<<<< HEAD
      public Request (Calendar reqDate,String mov,Customer cust){
          
          this.requestDate=reqDate;
@@ -60,6 +72,8 @@ public class Request implements Searchable  {
          this.customer=cust;
      }
      
+=======
+>>>>>>> Project-patch-1
      public String getReqDate()
      {
          SimpleDateFormat formatter= new SimpleDateFormat("E,y-m-d 'at'h:m:s az");
