@@ -26,6 +26,11 @@ public class Customer implements Searchable {
     
     }
     
+    public Customer(String email){
+        
+        this.email=email;
+    }
+    
     public String getCustName(){
      
         return this.name;

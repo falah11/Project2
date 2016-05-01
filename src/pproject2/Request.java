@@ -18,6 +18,7 @@ public class Request implements Searchable  {
     private Calendar responseDate;
     private Reqstatus status;
     private ReqType reqtype;
+    private String movID;
     private Movie movie;
     private Customer customer;
 
@@ -41,15 +42,22 @@ public class Request implements Searchable  {
     
         BY_MAIL, GOTO_SHOP
     }
-     public Request (Calendar reqDate,Calendar respDate, Reqstatus st,ReqType req,Movie mov,Customer cust){
+     public Request (Calendar reqDate,Calendar respDate, Reqstatus st,ReqType req,String mov,Customer cust){
       
          this.requestDate=reqDate;
          this.responseDate=respDate;
          this.status=st;
          this.reqtype=req;
-         this.movie=mov;
+         this.movID=mov;
          this.customer=cust;
      
+     }
+     
+     public Request (Calendar reqDate,String mov,Customer cust){
+         
+         this.requestDate=reqDate;
+         this.movID=mov;
+         this.customer=cust;
      }
      
      public String getReqDate()

@@ -5,10 +5,12 @@
  */
 package pproject2;
 
+import static com.sun.org.apache.xalan.internal.xsltc.compiler.util.Type.String;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map.Entry;
 import static java.util.Spliterators.iterator;
+import pproject2.Actor.Gender;
 import pproject2.DVD.Position;
 
 /**
@@ -24,7 +26,11 @@ public class Movie implements Searchable {
     private String name;
     private Language language;
     private DVD dvd;
+    private Actor actor;
     private Keyword keywd;
+
+   
+    
     
    
 
@@ -47,22 +53,30 @@ public class Movie implements Searchable {
     }
     public enum Type{
      
-        G,PG, PG13,R
+        G,PG, PG_13,R
     }
     
     private HashMap<String,Actor> actors = new HashMap<String,Actor>();// list of actors in Movie
     private HashMap<String,DVD> dvds= new HashMap<String,DVD>();// list of dvd for each Movie
     private HashMap<String,Keyword> keywds= new HashMap<String,Keyword>();// list of keyword for a Movie
     
-    public Movie(String id, Type rate, String gen, int yr,String name, DVD dvd,Keyword ky,Language lang){
+    public Movie(String id, Type rate, String gen, int yr,String name,Language lang,DVD dvd,Actor act,Keyword ky){
         this.ID=id; 
         this.rating=rate;
         this.genre= gen;
         this.year=yr;
-        this.dvd= dvd;
-        this.keywd=ky;
+        this.name=name;
         this.language=lang;
+        this.dvd= dvd;
+        this.actor=act;
+        this.keywd=ky;
        
+       
+    }
+    
+    public Movie(String id){
+        
+        this.ID=id;
     }
     public String getMovieID(){
      
@@ -91,7 +105,7 @@ public class Movie implements Searchable {
         
         for(Entry<String,DVD> entry:dvds.entrySet()){
             
-            if(entry.getValue().equals(SN)){
+            if(entry.getKey().equalsIgnoreCase(SN)){
                 
                 dvds.remove(SN);
             }
@@ -99,13 +113,58 @@ public class Movie implements Searchable {
         }
     }
     
-    public DVD findDVD(String SN, boolean lst, Posti
-            
-            
-            tion pos){
+    public DVD findDVD(String SN, boolean lst, Position pos){
         
-        DVD d= new DVD()
+        DVD d= new DVD(SN, lst,pos);
+        for(Entry<String,DVD> entry: dvds.entrySet()){
+            
+            if(entry.getKey().contains(SN)){
+                
+                d= entry.getValue();
+            }
+            
+        }
+        return d;
     }
+    
+    public Actor addActor(String ID, String name, Gender gen){
+        
+        Actor act = new Actor(ID, name, gen);
+        
+        actors.put(ID, act);
+        
+        return act;
+    }
+    
+    public Actor findActor (String ID, String name, Gender gen){
+        
+        Actor act= new Actor(ID, name,  gen);
+        for(Entry<String,Actor> entry: actors.entrySet()){
+            
+            if(entry.getKey().contains(ID)){
+                
+              act=entry.getValue();
+            }
+        }
+        
+        return act;
+    }
+
+    public Keyword addKeyword(String k){
+        
+        Keyword kwd= new Keyword(k);
+        
+        for(Entry<String,Keyword> entry:keywds.entrySet() ){
+            
+            if(entry.getKey().equalsIgnoreCase(GetMovieName().trim().substring(0))){
+                
+                kwd=entry.getValue();
+            }
+        }
+        return kwd;
+    }
+    
+    
 
 }
 

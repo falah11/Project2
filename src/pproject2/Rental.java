@@ -19,9 +19,14 @@ public class Rental implements Searchable {
     private Status status;
     private DVD dvd;
     private Customer customer;
-    private Review rev;//
+    private String rating;//
+    private String review;
     private ReturnType retrn;
+    private String movieID;
+    
     //private int Customerrate;
+
+    
 
     @Override
     public boolean contains(String k) {
@@ -42,7 +47,7 @@ public class Rental implements Searchable {
     
 }
     
-    public Rental(Calendar rtDate,Calendar rtrnDate, Status st,DVD dvd,Customer cust,ReturnType ret, Review rev ){
+    public Rental(Calendar rtDate,Calendar rtrnDate, Status st,DVD dvd,Customer cust,ReturnType ret,String movID){
      
         this.rentDate= rtDate;
         this.returnDate= rtrnDate;
@@ -50,7 +55,9 @@ public class Rental implements Searchable {
         this.dvd=dvd;
         this.customer=cust;
         this.retrn=ret;
-        this.rev=rev;
+        this.movieID=movID;
+        
+        
     }
     
     public String getRentDate()
